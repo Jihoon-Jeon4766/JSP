@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%@ page import="common.MemberDTO" %>
+<%@ page import="common.MemberDAO" %>    
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원 정보 수정</title>
+</head>
+<body>
+
+<%
+    String userId = (String) session.getAttribute("userId");
+
+    MemberDAO dao = new MemberDAO();
+    MemberDTO member = dao.getMemberById(userId);
+
+    String id = member.getId();
+    String password = member.getPassword();
+    String name = member.getName();
+    dao.close();
+%>
+
+<h2>회원 정보 수정</h2>
+
+<!-- 회원 정보 수정 폼 -->
+<form action="EX06.jsp" method="post">
+    <input type="hidden" name="id" value="<%= id %>">
+
+    <label for="password">비밀번호:</label>
+    <input type="password" name="password" id="password" value="<%= password %>"><br><br>
+
+    <label for="name">이름:</label>
+    <input type="text" name="name" id="name" value="<%= name %>"><br><br>
+
+    <input type= 'submit' value="회원 정보 수정하기">
+</form>
+
+<!-- 회원 탈퇴 폼 (수정 폼과 분리) -->
+<form action="EX07.jsp" method="post" style="margin-top: 20px;">
+    <input type="hidden" name="id" value="<%= id %>">
+    <input type='submit' value="회원 탈퇴"
+           onclick="return confirm('회원 탈퇴를 하시겠습니까?');">
+</form>
+
+
+</body>
+</html>
