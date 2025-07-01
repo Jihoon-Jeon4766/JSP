@@ -1,0 +1,71 @@
+# `chapter06 - EX05.jsp`
+
+```java
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%@ page = import = "java.util.List" %>    
+<%@ page =  import ="java.util.ArrayList" %>
+<%@ page = import = "common.Person" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> EL - Collection </title>
+</head>
+<body>
+<%
+	List<Object> list = new ArrayList<Object>();
+	list.add("손흥민");
+	list.add(new Person("이강인",25));
+	pageContext.setAttribute("Soccer", list);
+%>
+<ul>
+	<li> 이름 : ${Soccer[0]} </li>
+	<li> 친구 : ${Soccer[1]}, ${Soccer[1], age } </li>
+	<li> 관계 : ${Soccer[2]} </li>
+</ul>
+
+</body>
+</html>
+```
+
+# `오류가 날때`
+
+```java
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+   
+   //Eclipse -> Setting
+```
+
+![스크린샷 2025-05-27 17.36.53.png](attachment:1b38bb0e-f2a4-4faa-b275-2c79c534ca5b:스크린샷_2025-05-27_17.36.53.png)
+
+![스크린샷 2025-05-27 17.37.18.png](attachment:9a450ab2-ecd0-449e-99f6-72c6ae00196a:스크린샷_2025-05-27_17.37.18.png)
+
+```java
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import = "common.ELTest" %>    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> EL- Method </title>
+</head>
+<body>
+
+<%
+	ELTest el = new ELTest();
+	pageContext.setAttribute("el", el);
+%>
+
+<h3> instance method 호출 </h3> //객체를 생성하고 호출 
+${el.eltestmethod1("요시")}<br/>
+
+<h3> static method 호출 (정적)</h3> //객체를 생성 안 하고 호출(static)
+${ELTest.eltestmethod2("피치공주")}
+
+</body>
+</html>
+```
