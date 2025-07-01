@@ -1,0 +1,7 @@
+package common;
+
+public class MemberDAO extends DBConnPool {
+	
+	public MemberDAO() {
+		super(); //DB 연결 
+	}
