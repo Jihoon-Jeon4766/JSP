@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%
+	session.removeAttribute("UserId");
+	session.removeAttribute("UserName");
+	
+	//세션을 완전히 종료하는 메서드.
+	session.invalidate();
+	
+	response.sendRedirect("EX01.jsp");
+%>    
