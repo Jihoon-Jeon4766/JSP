@@ -1,0 +1,31 @@
+<%@page import="common.MemberDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<%
+	String id = request.getParameter("id");
+	String password = request.getParameter("password");
+	String name = request.getParameter("name");
+	
+	MemberDAO dao = new MemberDAO();
+	int result = dao.updateMember(id, password, name);
+	
+	
+	if(result > 0 ){
+		out.println("<p> 회원 정보가 성공적으로 수정되었습니다. </p>");
+	}else{
+		out.println("<p> 회원 정보 수정에 실패하였습니다. </p>");
+	}
+%>
+
+<a href = "EX03.jsp"> [메인 페이지 이동]</a>
+
+</body>
+</html>
