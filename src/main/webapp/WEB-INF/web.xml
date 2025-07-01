@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>Web</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+     <servlet-name>ExampleServlet</servlet-name>
+     <jsp-file>/Chapter2/EX07.jsp</jsp-file>
+     <init-param>
+        <param-name>email</param-name>
+        <param-value>aaa@gmail.com</param-value>
+     </init-param>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>ExampleServlet</servlet-name>
+     <url-pattern>/Chapter2/EX07.jsp</url-pattern>
+  </servlet-mapping>
+  
+  
+<servlet>
+    <servlet-name>FortunesServlet</servlet-name>
+    <jsp-file>/Chapter2/Q2.jsp</jsp-file>
+    <init-param>
+        <param-name>fortunes</param-name>
+        <param-value>오늘의 운세를 알아봅시다.</param-value>
+    </init-param>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>FortunesServlet</servlet-name>
+    <url-pattern>/Chapter2/Q2.jsp</url-pattern>
+</servlet-mapping>
+
+<session-config>
+	<session-timeout>20</session-timeout>
+</session-config>
+
+  <servlet>
+  		<servlet-name>ServletTest1</servlet-name>
+  		<servlet-class>board.ServletTest1</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  		<servlet-name>ServletTest1</servlet-name>
+  		<url-pattern>/servlet.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  <servlet>
+  		<servlet-name>listController</servlet-name>
+  		<servlet-class>board.ListController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  		<servlet-name>listController</servlet-name>
+  		<url-pattern>/list.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  		<servlet-name> writeController</servlet-name>
+  		<servlet-class>board.WriteController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  		<servlet-name>writeController</servlet-name>
+  		<url-pattern>/write.do</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  		<servlet-name> DetailController</servlet-name>
+  		<servlet-class>board.DetailController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  		<servlet-name>DetailController</servlet-name>
+  		<url-pattern>/detail.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  		<servlet-name> updateController</servlet-name>
+  		<servlet-class>board.UpdateController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  		<servlet-name>updateController</servlet-name>
+  		<url-pattern>/update.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  		<servlet-name> updateSubmitController</servlet-name>
+  		<servlet-class>board.UpdateSubmitController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  		<servlet-name>updateSubmitController</servlet-name>
+  		<url-pattern>/updateSubmit.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  		<servlet-name> DeleteController</servlet-name>
+  		<servlet-class>board.DeleteController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  		<servlet-name>DeleteController</servlet-name>
+  		<url-pattern>/delete.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+ <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>member.LoginController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/login.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>LogoutController</servlet-name>
+    <servlet-class>member.LogoutController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>LogoutController</servlet-name>
+    <url-pattern>/logout.do</url-pattern>
+</servlet-mapping>
+
+<servlet>
+    <servlet-name>MemberDeleteController</servlet-name>
+    <servlet-class>member.MemberDeleteController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>MemberDeleteController</servlet-name>
+    <url-pattern>/memberdelete.do</url-pattern>
+</servlet-mapping>
+
+  
+  
+ <!-- 회원 수정 -->
+  <servlet>
+  		<servlet-name>MemberUpdateController</servlet-name>
+  		<servlet-class>member.MemberUpdateController</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+  		<servlet-name>MemberUpdateController</servlet-name>
+  		<url-pattern>/memberupdate.do</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  		<servlet-name>MemberUpdateSubmitController</servlet-name>
+  		<servlet-class>member.MemberUpdateSubmitController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  		<servlet-name>MemberUpdateSubmitController</servlet-name>
+  		<url-pattern>/memberupdatesubmit.do</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+</web-app>
